@@ -127,10 +127,10 @@ export const crearUsuario = async (req, res) => {
       });
     }
 
-    // Validar que el email sea de Telecentro (opcional, según requerimiento)
-    if (!email.toLowerCase().endsWith('@telecentro.com.ar') && !email.toLowerCase().endsWith('@telecentro.com')) {
+    // Validar que el email sea de Apex America (opcional, según requerimiento)
+    if (!email.toLowerCase().endsWith('@apexamerica.com.ar') && !email.toLowerCase().endsWith('@apexamerica.com')) {
       return res.status(400).json({ 
-        error: 'El email debe ser de Telecentro (@telecentro.com.ar o @telecentro.com)' 
+        error: 'El email debe ser de Apex America (@apexamerica.com.ar o @apexamerica.com)' 
       });
     }
 
@@ -356,7 +356,7 @@ export const guardarAgenteMetricas = async (req, res) => {
         `INSERT INTO usuarios (nombre, email, password, rol) 
          VALUES ($1, $2, $3, $4) 
          RETURNING *`,
-        [nombreAgente, `${nombreAgente.toLowerCase().replace(/\s/g, '.')}@telecentro.com`, 'agente123', 'agente']
+        [nombreAgente, `${nombreAgente.toLowerCase().replace(/\s/g, '.')}@apexamerica.com`, 'agente123', 'agente']
       );
       agente = result.rows[0];
     }

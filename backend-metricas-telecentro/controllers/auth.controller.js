@@ -93,10 +93,10 @@ export const registrar = async (req, res) => {
       });
     }
 
-    // Validar que el email sea de Telecentro
-    if (!email.toLowerCase().endsWith('@telecentro.com.ar') && !email.toLowerCase().endsWith('@telecentro.com')) {
+    // Validar que el email sea de Apex America
+    if (!email.toLowerCase().endsWith('@apexamerica.com.ar') && !email.toLowerCase().endsWith('@apexamerica.com')) {
       return res.status(400).json({ 
-        error: 'El email debe ser de Telecentro (@telecentro.com.ar o @telecentro.com)' 
+        error: 'El email debe ser de Apex America (@apexamerica.com.ar o @apexamerica.com)' 
       });
     }
 

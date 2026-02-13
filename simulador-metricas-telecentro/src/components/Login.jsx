@@ -38,7 +38,7 @@ const Login = ({ onLogin, onSwitchToRegistro }) => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="tu.email@telecentro.com.ar"
+              placeholder="tu.email@apexamerica.com.ar"
               required
             />
           </div>
