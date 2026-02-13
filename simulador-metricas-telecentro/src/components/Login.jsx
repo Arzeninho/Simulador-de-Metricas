@@ -26,7 +26,7 @@ const Login = ({ onLogin, onSwitchToRegistro }) => {
     <div className="login-container">
       <div className="login-box">
         <div className="login-header">
-          <h1>📊 Métricas Telecentro</h1>
+          <h1>📊 Inicia sesión </h1>
           <p>Sistema de Gestión de Métricas</p>
         </div>
         
@@ -66,18 +66,11 @@ const Login = ({ onLogin, onSwitchToRegistro }) => {
           <button 
             type="button" 
             onClick={onSwitchToRegistro}
-            style={{ 
-              background: 'none', 
-              border: 'none', 
-              color: '#4a90d9', 
-              cursor: 'pointer',
-              textDecoration: 'underline',
-              fontSize: '0.9rem'
-            }}
+            className="link-button"
           >
             ¿No tienes usuario? Regístrate aquí
           </button>
-          <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#888' }}>🔐 Sistema de Supervisión - Telecentro Argentina</p>
+          <p>🔐 Sistema de Supervisión - Apex America</p>
         </div>
       </div>
     </div>

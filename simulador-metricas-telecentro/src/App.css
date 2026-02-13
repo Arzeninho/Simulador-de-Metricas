@@ -3,113 +3,363 @@
   padding-bottom: 2rem;
 }
 
-/* Login Styles */
+/* Login Styles - Dark Theme (Black/Gray) */
 .login-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.login-card {
-  background: white;
+/* Subtle grid pattern */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.login-box {
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
   padding: 3rem;
-  border-radius: 1rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 400px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  position: relative;
+  z-index: 1;
 }
 
-.login-card h2 {
+.login-header {
   text-align: center;
-  color: #1a1a1a;
-  margin-bottom: 0.5rem;
-  font-size: 1.8rem;
-}
-
-.login-subtitle {
-  text-align: center;
-  color: #666;
   margin-bottom: 2rem;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
+.login-header h1 {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
 }
 
-.form-group label {
+.login-header p {
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+.login-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.login-form .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #b0b0b0;
   font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.form-group input {
+.login-form .form-group input {
   width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #ddd;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: border-color 0.3s;
+  padding: 0.875rem 1rem;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
   box-sizing: border-box;
 }
 
-.form-group input:focus {
+.login-form .form-group input::placeholder {
+  color: #555555;
+}
+
+.login-form .form-group input:focus {
   outline: none;
-  border-color: #4a90d9;
+  border-color: #666666;
+  background: #111111;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
 }
 
-.form-group input.input-error {
-  border-color: #ff4a4a;
-  background-color: rgba(255, 74, 74, 0.1);
-}
-
-.error-text {
-  color: #ff4a4a;
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
-  display: block;
-}
-
-.btn-primary {
+.btn-login {
   width: 100%;
-  padding: 1rem;
-  background: linear-gradient(135deg, #4a90d9 0%, #357abd 100%);
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(180deg, #3a3a3a 0%, #252525 100%);
+  color: #ffffff;
+  border: 1px solid #444444;
+  border-radius: 8px;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+.btn-login:hover {
+  background: linear-gradient(180deg, #454545 0%, #2a2a2a 100%);
+  border-color: #555555;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-.btn-primary:disabled {
-  opacity: 0.6;
+.btn-login:active {
+  transform: translateY(0);
+}
+
+.btn-login:disabled {
+  background: #1a1a1a;
+  color: #555555;
+  border-color: #333333;
   cursor: not-allowed;
   transform: none;
-}
-
-.error-message {
-  background: #fee;
-  color: #c33;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
 }
 
 .login-footer {
   text-align: center;
   margin-top: 1.5rem;
-  color: #666;
+  padding-top: 1.5rem;
+  border-top: 1px solid #222222;
+}
+
+.login-footer button {
+  background: none;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.login-footer button:hover {
+  color: #bbbbbb;
+}
+
+.login-footer p {
+  color: #444444;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.error-message {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  color: #dc3545;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* Dashboard & Main Content - Dark Theme */
+.dashboard-container {
+  background: #0a0a0a;
+  min-height: calc(100vh - 70px);
+  padding: 1.5rem;
+}
+
+.dashboard-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Cards and Containers */
+.card {
+  background: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #333333;
+}
+
+/* Tables - Dark Theme */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead {
+  background: #252525;
+}
+
+th {
+  color: #b0b0b0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #333333;
+}
+
+td {
+  color: #e0e0e0;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+tbody tr:hover {
+  background: #252525;
+}
+
+/* Header - Dark Theme */
+.header {
+  background: #0d0d0d;
+  border-bottom: 1px solid #222222;
+  padding: 1rem 1.5rem;
+}
+
+.header-title {
+  color: #ffffff;
+}
+
+/* Buttons - Dark Theme */
+.btn {
+  background: #333333;
+  color: #e0e0e0;
+  border: 1px solid #444444;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
   font-size: 0.9rem;
+}
+
+.btn:hover {
+  background: #404040;
+  border-color: #555555;
+}
+
+.btn-primary {
+  background: #2a2a2a;
+  border-color: #444444;
+}
+
+.btn-primary:hover {
+  background: #333333;
+}
+
+/* Form elements - Dark Theme */
+input, select, textarea {
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  color: #e0e0e0;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #555555;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+input::placeholder {
+  color: #666666;
+}
+
+/* Metric Cards - Dark Theme */
+.metric-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.metric-label {
+  color: #888888;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Modal - Dark Theme */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: 16px;
+}
+
+.modal-header {
+  border-bottom: 1px solid #333333;
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-header h2 {
+  color: #ffffff;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+/* Scrollbar - Dark Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
 }
 
 .user-info {
@@ -168,7 +418,7 @@
 
 /* Header Styles */
 .header {
-  background: linear-gradient(135deg, #fefeff 0%, #e2e2e7 100%);
+  background: #0d0d0d;
   color: white;
   padding: 1.5rem 2rem;
   box-shadow: var(--shadow);
@@ -217,7 +467,7 @@
 
 .metricas-titulo {
   font-size: 1.8rem;
-  color: var(--color-dark);
+  color: #e0e0e0;
   margin-bottom: 1rem;
   font-weight: 700;
 }
@@ -252,7 +502,7 @@
 
 /* Métrica Card */
 .metrica-card {
-  background: white;
+  background: #1a1a1a;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: var(--shadow);
@@ -300,7 +550,7 @@
 .metrica-valor .valor {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-dark);
+  color: #e0e0e0;
 }
 
 .metrica-valor .unidad {
@@ -314,7 +564,7 @@
   gap: 0.5rem;
   font-size: 0.85rem;
   padding-top: 0.75rem;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid #333333;
 }
 
 .metrica-tendencia.positiva {
@@ -331,7 +581,7 @@
 
 /* Tabla Agentes */
 .tabla-agentes-container {
-  background: #e9ecef;
+  background: #1a1a1a;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: var(--shadow);
@@ -341,13 +591,14 @@
 
 .tabla-agentes-container h2 {
   margin-bottom: 1.5rem;
-  color: var(--color-dark);
+  color: #e0e0e0;
   font-size: 1.5rem;
 }
 
 .tabla-wrapper {
   overflow-x: auto;
-  background: white;
+  background: #1a1a1a;
+  border: 1px solid #333333;
   border-radius: 8px;
 }
 
@@ -377,17 +628,17 @@
 }
 
 .tabla-agentes tbody tr {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #333333;
   transition: background-color 0.2s ease;
-  background-color: #f8f9fa;
+  background-color: #1e1e1e;
 }
 
 .tabla-agentes tbody tr:nth-child(even) {
-  background-color: #e9ecef;
+  background-color: #252525;
 }
 
 .tabla-agentes tbody tr:hover {
-  background-color: #d3d7db;
+  background-color: #2a2a2a;
 }
 
 .tabla-agentes td {
@@ -403,7 +654,7 @@
 
 .nombre-agente {
   font-weight: 600;
-  color: var(--color-dark);
+  color: #e0e0e0;
   text-align: left;
 }
 
@@ -422,38 +673,43 @@
 }
 
 .porcentaje-badge.comercial {
-  background-color: #d4edda;
-  color: #155724;
+  background-color: #1a3d1a;
+  color: #4ade80;
 }
 
 .porcentaje-badge.retencion {
-  background-color: #fff3cd;
-  color: #856404;
+  background-color: #3d2e0a;
+  color: #fbbf24;
 }
 
 .porcentaje-badge.isn {
-  background-color: #e7d4f5;
-  color: #6f42c1;
+  background-color: #2d1f3d;
+  color: #c084fc;
 }
 
 .porcentaje-badge.epa-satisfaccion {
-  background-color: #d1ecf1;
-  color: #0c5460;
+  background-color: #0a2d33;
+  color: #22d3ee;
 }
 
 .porcentaje-badge.epa-resolucion {
-  background-color: #d4edda;
-  color: #155724;
+  background-color: #1a3d1a;
+  color: #4ade80;
 }
 
 .porcentaje-badge.epa-trato {
-  background-color: #fff3cd;
-  color: #856404;
+  background-color: #3d2e0a;
+  color: #fbbf24;
 }
 
 .porcentaje-badge.visitas {
-  background-color: #f8d7da;
-  color: #721c24;
+  background-color: #3d0a0a;
+  color: #f87171;
+}
+
+.porcentaje-badge.fcr {
+  background-color: #0a1f3d;
+  color: #60a5fa;
 }
 
 /* Estilos para Métrica Editable */
@@ -481,10 +737,11 @@
   font-size: 2rem;
   font-weight: 700;
   padding: 0.5rem;
-  border: 2px solid var(--color-primary);
+  border: 2px solid #555555;
   border-radius: 8px;
   width: 100%;
-  color: var(--color-dark);
+  color: #e0e0e0;
+  background: #1a1a1a;
 }
 
 .unidad-edicion {
@@ -531,7 +788,8 @@
 
 /* Estilos para Encuesta EPA */
 .encuesta-epa-card {
-  background: white;
+  background: #1a1a1a;
+  border: 1px solid #333333;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: var(--shadow);
@@ -558,7 +816,7 @@
 
 .epa-titulo h2 {
   font-size: 1.8rem;
-  color: var(--color-dark);
+  color: #e0e0e0;
   margin: 0;
 }
 
@@ -570,7 +828,7 @@
 }
 
 .epa-indice {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #252525;
   padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
@@ -579,7 +837,7 @@
 
 .epa-indice:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .epa-indice.satisfaccion {
@@ -612,7 +870,7 @@
 .valor-epa .numero {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--color-dark);
+  color: #e0e0e0;
 }
 
 .valor-epa .unidad {
@@ -631,11 +889,12 @@
   font-size: 2.5rem;
   font-weight: 700;
   padding: 0.5rem;
-  border: 2px solid var(--color-primary);
+  border: 2px solid #555555;
   border-radius: 8px;
   width: 120px;
   text-align: center;
-  color: var(--color-dark);
+  color: #e0e0e0;
+  background: #1a1a1a;
 }
 
 .input-group .unidad {
@@ -648,7 +907,7 @@
   gap: 1rem;
   justify-content: center;
   padding-top: 1rem;
-  border-top: 2px solid #e9ecef;
+  border-top: 2px solid #333333;
 }
 
 .btn-guardar-epa,
@@ -688,36 +947,38 @@
 
 /* Estilos para Métricas Globales */
 .metricas-globales-container {
-  background: white;
+  background: #1a1a1a;
+  border: 1px solid #333333;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: var(--shadow);
   margin-bottom: 2rem;
+  overflow-x: auto;
 }
 
 .metricas-globales-header h2 {
   font-size: 1.8rem;
-  color: var(--color-dark);
+  color: #e0e0e0;
   margin-bottom: 1.5rem;
   font-weight: 700;
 }
 
 .metricas-globales-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0.75rem;
 }
 
 .metrica-global-item {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 8px;
-  background: #f8f9fa;
+  background: #252525;
   transition: all 0.3s ease;
 }
 
 .metrica-global-item:hover {
-  background: #e9ecef;
+  background: #2a2a2a;
   transform: translateY(-2px);
 }
 
@@ -731,7 +992,7 @@
 }
 
 .metrica-global-icono {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .metrica-global-header h3 {
@@ -767,9 +1028,9 @@
 }
 
 .valor-global {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-dark);
+  color: #e0e0e0;
 }
 
 .unidad-global {
@@ -788,11 +1049,12 @@
   font-size: 2rem;
   font-weight: 700;
   padding: 0.5rem;
-  border: 2px solid var(--color-primary);
+  border: 2px solid #555555;
   border-radius: 8px;
   width: 100px;
   text-align: center;
-  color: var(--color-dark);
+  color: #e0e0e0;
+  background: #1a1a1a;
 }
 
 .botones-edicion-global {
@@ -837,7 +1099,8 @@
   gap: 1rem;
   margin-bottom: 2rem;
   padding: 1rem;
-  background: white;
+  background: #1a1a1a;
+  border: 1px solid #333333;
   border-radius: 12px;
   box-shadow: var(--shadow);
   justify-content: flex-end;
@@ -894,7 +1157,8 @@
 }
 
 .gestion-usuarios-modal {
-  background: white;
+  background: #1e1e1e;
+  border: 1px solid #333333;
   border-radius: 1rem;
   width: 90%;
   max-width: 700px;
@@ -908,12 +1172,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid #333333;
 }
 
 .modal-header h2 {
   margin: 0;
-  color: #1a1a1a;
+  color: #e0e0e0;
 }
 
 .btn-cerrar {
@@ -921,11 +1185,11 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #666;
+  color: #888888;
 }
 
 .btn-cerrar:hover {
-  color: #333;
+  color: #e0e0e0;
 }
 
 .modal-body {
@@ -941,12 +1205,17 @@
 .tabla-usuarios td {
   padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid #333333;
 }
 
 .tabla-usuarios th {
-  background: #f8f9fa;
+  background: #252525;
   font-weight: 600;
+  color: #e0e0e0;
+}
+
+.tabla-usuarios td {
+  color: #e0e0e0;
 }
 
 .rol-badge {
@@ -957,19 +1226,19 @@
 }
 
 .rol-badge.supervisor {
-  background: #e3f2fd;
-  color: #1565c0;
+  background: #1a2d47;
+  color: #64b5f6;
 }
 
 .rol-badge.agente {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: #1a2d1a;
+  color: #81c784;
 }
 
 .btn-eliminar {
-  background: #fee;
-  border: 1px solid #fcc;
-  color: #c33;
+  background: #2d0a0a;
+  border: 1px solid #5c1a1a;
+  color: #f87171;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -977,7 +1246,7 @@
 }
 
 .btn-eliminar:hover {
-  background: #fdd;
+  background: #3d0f0f;
 }
 
 .form-crear-usuario {
@@ -988,7 +1257,7 @@
 .form-crear-usuario h3 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #1a1a1a;
+  color: #e0e0e0;
 }
 
 .botones-formulario {

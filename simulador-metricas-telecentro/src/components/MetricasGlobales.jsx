@@ -26,13 +26,14 @@ const MetricasGlobales = ({ metricas, onUpdate, puedeEditar = true }) => {
 
   const metricasConfig = [
     { campo: 'tmo', titulo: 'TMO Global', icono: '⏱️', unidad: 'seg', tipo: 'number' },
+    { campo: 'epaSatisfaccion', titulo: 'EPA Satisfacción', icono: '😊', unidad: '%', tipo: 'number' },
+    { campo: 'epaResolucion', titulo: 'EPA Resolución', icono: '✅', unidad: '%', tipo: 'number' },
+    { campo: 'epaTrato', titulo: 'EPA Trato', icono: '🤝', unidad: '%', tipo: 'number' },
+    { campo: 'fcr', titulo: 'FCR Global', icono: '🎯', unidad: '%', tipo: 'number' },
     { campo: 'transferenciasComercial', titulo: 'Trans. Comercial', icono: '📞', unidad: '%', tipo: 'number' },
     { campo: 'transferenciasRetencion', titulo: 'Trans. Retención', icono: '🔄', unidad: '%', tipo: 'number' },
     { campo: 'encuestaISN', titulo: 'ISN Global', icono: '⭐', unidad: '%', tipo: 'number' },
-    { campo: 'visitasTecnicas', titulo: 'Visitas Técnicas', icono: '🔧', unidad: '%', tipo: 'number' },
-    { campo: 'epaSatisfaccion', titulo: 'EPA Satisfacción', icono: '😊', unidad: '%', tipo: 'number' },
-    { campo: 'epaResolucion', titulo: 'EPA Resolución', icono: '✅', unidad: '%', tipo: 'number' },
-    { campo: 'epaTrato', titulo: 'EPA Trato', icono: '🤝', unidad: '%', tipo: 'number' }
+    { campo: 'visitasTecnicas', titulo: 'Visitas Técnicas', icono: '🔧', unidad: '%', tipo: 'number' }
   ];
 
   return (

@@ -6,7 +6,7 @@ const Header = ({ usuario, onLogout, onOpenGestionUsuarios }) => {
       <div className="header-content">
         <div className="logo-section">
           <h1>📊 Simulador de Métricas</h1>
-          <p className="subtitle">Telecentro Argentina - Soporte Técnico</p>
+          <p className="subtitle">Apex America - Soporte Técnico</p>
         </div>
         <div className="header-info">
           <div className="user-info">

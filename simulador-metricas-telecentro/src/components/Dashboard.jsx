@@ -16,19 +16,20 @@ const Dashboard = ({ usuario }) => {
       visitasTecnicas: 23.5,
       epaSatisfaccion: 87.5,
       epaResolucion: 82.3,
-      epaTrato: 91.2
+      epaTrato: 91.2,
+      fcr: 75.5
     },
     agentes: [
-      { id: 'AG001', nombre: 'Juan Pérez', tmo: 320, transComercial: 10.5, transRetencion: 7.2, isn: 88.5, epaSatisfaccion: 89.2, epaResolucion: 84.5, epaTrato: 92.1, visitasTecnicas: 22.3 },
-      { id: 'AG002', nombre: 'María González', tmo: 295, transComercial: 11.8, transRetencion: 8.5, isn: 91.2, epaSatisfaccion: 90.5, epaResolucion: 86.3, epaTrato: 93.8, visitasTecnicas: 24.1 },
-      { id: 'AG003', nombre: 'Carlos Rodríguez', tmo: 370, transComercial: 13.2, transRetencion: 9.1, isn: 82.3, epaSatisfaccion: 85.7, epaResolucion: 80.2, epaTrato: 88.9, visitasTecnicas: 25.8 },
-      { id: 'AG004', nombre: 'Ana Martínez', tmo: 345, transComercial: 12.0, transRetencion: 7.8, isn: 89.7, epaSatisfaccion: 88.4, epaResolucion: 83.9, epaTrato: 91.5, visitasTecnicas: 21.7 },
-      { id: 'AG005', nombre: 'Luis Fernández', tmo: 315, transComercial: 11.5, transRetencion: 8.0, isn: 84.6, epaSatisfaccion: 86.8, epaResolucion: 81.7, epaTrato: 89.3, visitasTecnicas: 23.9 },
-      { id: 'AG006', nombre: 'Laura Sánchez', tmo: 330, transComercial: 12.8, transRetencion: 8.7, isn: 90.1, epaSatisfaccion: 89.9, epaResolucion: 85.6, epaTrato: 92.7, visitasTecnicas: 22.5 },
-      { id: 'AG007', nombre: 'Diego López', tmo: 350, transComercial: 13.5, transRetencion: 9.3, isn: 86.4, epaSatisfaccion: 87.2, epaResolucion: 82.8, epaTrato: 90.1, visitasTecnicas: 24.6 },
-      { id: 'AG008', nombre: 'Sofía Torres', tmo: 305, transComercial: 10.8, transRetencion: 7.5, isn: 92.3, epaSatisfaccion: 91.1, epaResolucion: 87.4, epaTrato: 94.2, visitasTecnicas: 20.8 },
-      { id: 'AG009', nombre: 'Martín Silva', tmo: 360, transComercial: 14.0, transRetencion: 9.5, isn: 83.8, epaSatisfaccion: 85.3, epaResolucion: 79.8, epaTrato: 88.5, visitasTecnicas: 26.2 },
-      { id: 'AG010', nombre: 'Valentina Ruiz', tmo: 325, transComercial: 11.2, transRetencion: 8.2, isn: 88.9, epaSatisfaccion: 88.7, epaResolucion: 84.1, epaTrato: 91.8, visitasTecnicas: 23.1 }
+      { id: 'AG001', nombre: 'Juan Pérez', tmo: 320, transComercial: 10.5, transRetencion: 7.2, isn: 88.5, epaSatisfaccion: 89.2, epaResolucion: 84.5, epaTrato: 92.1, visitasTecnicas: 22.3, fcr: 78.5 },
+      { id: 'AG002', nombre: 'María González', tmo: 295, transComercial: 11.8, transRetencion: 8.5, isn: 91.2, epaSatisfaccion: 90.5, epaResolucion: 86.3, epaTrato: 93.8, visitasTecnicas: 24.1, fcr: 82.3 },
+      { id: 'AG003', nombre: 'Carlos Rodríguez', tmo: 370, transComercial: 13.2, transRetencion: 9.1, isn: 82.3, epaSatisfaccion: 85.7, epaResolucion: 80.2, epaTrato: 88.9, visitasTecnicas: 25.8, fcr: 71.2 },
+      { id: 'AG004', nombre: 'Ana Martínez', tmo: 345, transComercial: 12.0, transRetencion: 7.8, isn: 89.7, epaSatisfaccion: 88.4, epaResolucion: 83.9, epaTrato: 91.5, visitasTecnicas: 21.7, fcr: 76.8 },
+      { id: 'AG005', nombre: 'Luis Fernández', tmo: 315, transComercial: 11.5, transRetencion: 8.0, isn: 84.6, epaSatisfaccion: 86.8, epaResolucion: 81.7, epaTrato: 89.3, visitasTecnicas: 23.9, fcr: 74.5 },
+      { id: 'AG006', nombre: 'Laura Sánchez', tmo: 330, transComercial: 12.8, transRetencion: 8.7, isn: 90.1, epaSatisfaccion: 89.9, epaResolucion: 85.6, epaTrato: 92.7, visitasTecnicas: 22.5, fcr: 79.1 },
+      { id: 'AG007', nombre: 'Diego López', tmo: 350, transComercial: 13.5, transRetencion: 9.3, isn: 86.4, epaSatisfaccion: 87.2, epaResolucion: 82.8, epaTrato: 90.1, visitasTecnicas: 24.6, fcr: 72.4 },
+      { id: 'AG008', nombre: 'Sofía Torres', tmo: 305, transComercial: 10.8, transRetencion: 7.5, isn: 92.3, epaSatisfaccion: 91.1, epaResolucion: 87.4, epaTrato: 94.2, visitasTecnicas: 20.8, fcr: 85.7 },
+      { id: 'AG009', nombre: 'Martín Silva', tmo: 360, transComercial: 14.0, transRetencion: 9.5, isn: 83.8, epaSatisfaccion: 85.3, epaResolucion: 79.8, epaTrato: 88.5, visitasTecnicas: 26.2, fcr: 68.9 },
+      { id: 'AG010', nombre: 'Valentina Ruiz', tmo: 325, transComercial: 11.2, transRetencion: 8.2, isn: 88.9, epaSatisfaccion: 88.7, epaResolucion: 84.1, epaTrato: 91.8, visitasTecnicas: 23.1, fcr: 77.3 }
     ]
   };
 
@@ -119,6 +120,7 @@ const Dashboard = ({ usuario }) => {
           const idxEpaRes = headers.findIndex(h => h.includes('resolucion') || h.includes('epa r'));
           const idxEpaTra = headers.findIndex(h => h.includes('trato') || h.includes('epa t'));
           const idxVisitas = headers.findIndex(h => h.includes('visita'));
+          const idxFcr = headers.findIndex(h => h.includes('fcr') || h.includes('first'));
           
           // Parsear los datos de agentes
           const nuevosAgentes = [];
@@ -136,7 +138,8 @@ const Dashboard = ({ usuario }) => {
               epaSatisfaccion: idxEpaSat >= 0 && row[idxEpaSat] ? parseFloat(row[idxEpaSat]) || 0 : 0,
               epaResolucion: idxEpaRes >= 0 && row[idxEpaRes] ? parseFloat(row[idxEpaRes]) || 0 : 0,
               epaTrato: idxEpaTra >= 0 && row[idxEpaTra] ? parseFloat(row[idxEpaTra]) || 0 : 0,
-              visitasTecnicas: idxVisitas >= 0 && row[idxVisitas] ? parseFloat(row[idxVisitas]) || 0 : 0
+              visitasTecnicas: idxVisitas >= 0 && row[idxVisitas] ? parseFloat(row[idxVisitas]) || 0 : 0,
+              fcr: idxFcr >= 0 && row[idxFcr] ? parseFloat(row[idxFcr]) || 0 : 0
             };
             nuevosAgentes.push(agente);
           }
@@ -153,6 +156,7 @@ const Dashboard = ({ usuario }) => {
             const epaResProm = nuevosAgentes.reduce((sum, a) => sum + a.epaResolucion, 0) / nuevosAgentes.length;
             const epaTraProm = nuevosAgentes.reduce((sum, a) => sum + a.epaTrato, 0) / nuevosAgentes.length;
             const visitasProm = nuevosAgentes.reduce((sum, a) => sum + a.visitasTecnicas, 0) / nuevosAgentes.length;
+            const fcrProm = nuevosAgentes.reduce((sum, a) => sum + (a.fcr || 0), 0) / nuevosAgentes.length;
             
             setMetricas({
               tmo: Math.round(tmoProm),
@@ -162,7 +166,8 @@ const Dashboard = ({ usuario }) => {
               visitasTecnicas: Math.round(visitasProm * 10) / 10,
               epaSatisfaccion: Math.round(epaSatProm * 10) / 10,
               epaResolucion: Math.round(epaResProm * 10) / 10,
-              epaTrato: Math.round(epaTraProm * 10) / 10
+              epaTrato: Math.round(epaTraProm * 10) / 10,
+              fcr: Math.round(fcrProm * 10) / 10
             });
             
             alert(`✅ Se importaron ${nuevosAgentes.length} asesores con sus métricas`);
