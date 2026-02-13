@@ -88,8 +88,8 @@ const GestionUsuarios = ({ onClose }) => {
       nuevosErrores.email = 'El email es requerido';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       nuevosErrores.email = 'Formato de email inválido';
-    } else if (!formData.email.toLowerCase().endsWith('@telecentro.com.ar') && !formData.email.toLowerCase().endsWith('@telecentro.com')) {
-      nuevosErrores.email = 'Debe ser un email de Telecentro (@telecentro.com.ar)';
+    } else if (!formData.email.toLowerCase().endsWith('@apexamerica.com.ar') && !formData.email.toLowerCase().endsWith('@apexamerica.com')) {
+      nuevosErrores.email = 'Debe ser un email de Apexamerica (@apexamerica.com.ar)';
     }
     if (!formData.password || formData.password.length < 6) {
       nuevosErrores.password = 'La contraseña debe tener al menos 6 caracteres';
@@ -217,7 +217,7 @@ const GestionUsuarios = ({ onClose }) => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="email@telecentro.com.ar"
+                  placeholder="email@apexamerica.com.ar"
                   className={errores.email ? 'input-error' : ''}
                 />
                 {errores.email && <span className="error-text">{errores.email}</span>}
