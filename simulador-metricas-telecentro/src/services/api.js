@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// URL base del backend
-const API_URL = 'http://localhost:4000/api';
+// URL base del backend - usa variable de entorno para producción
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
 
 // Crear instancia de axios
 const api = axios.create({
@@ -148,7 +148,8 @@ export const guardarMetricas = async (datos) => {
       epa_satisfaccion: parseFloat(datos.epaSatisfaccion) || 0,
       epa_resolucion: parseFloat(datos.epaResolucion) || 0,
       epa_trato: parseFloat(datos.epaTrato) || 0,
-      visitas_tecnicas: parseFloat(datos.visitasTecnicas) || 0
+      visitas_tecnicas: parseFloat(datos.visitasTecnicas) || 0,
+      fcr: parseFloat(datos.fcr) || 0
     };
     
     const response = await api.post('/metricas/global', datosBackend);
@@ -172,7 +173,8 @@ export const guardarAgentes = async (datos) => {
       epa_satisfaccion: parseFloat(datos.epaSatisfaccion) || 0,
       epa_resolucion: parseFloat(datos.epaResolucion) || 0,
       epa_trato: parseFloat(datos.epaTrato) || 0,
-      visitas_tecnicas: parseFloat(datos.visitasTecnicas) || 0
+      visitas_tecnicas: parseFloat(datos.visitasTecnicas) || 0,
+      fcr: parseFloat(datos.fcr) || 0
     };
     
     const response = await api.post('/usuarios/agentes', datosBackend);
