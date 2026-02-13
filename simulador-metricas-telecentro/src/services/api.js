@@ -42,7 +42,7 @@ export const login = async (email, password) => {
 // Función para registro de asesores (auto-registro)
 export const registro = async (datos) => {
   try {
-    const response = await api.post('/auth/registro', datos);
+    const response = await api.post('/auth/registrar', datos);
     return response.data;
   } catch (error) {
     throw error.response?.data?.error || 'Error al registrar usuario';
