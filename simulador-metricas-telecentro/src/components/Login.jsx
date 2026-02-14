@@ -16,7 +16,12 @@ const Login = ({ onLogin, onSwitchToRegistro }) => {
       const datos = await login(email, password);
       onLogin(datos.usuario);
     } catch (err) {
-      setError(err);
+  const mensaje =
+    err.response?.data?.message ||
+    err.message ||
+    "Error al iniciar sesión";
+
+  setError(mensaje);
     } finally {
       setCargando(false);
     }
