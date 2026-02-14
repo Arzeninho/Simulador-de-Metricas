@@ -70,7 +70,7 @@ const Login = ({ onLogin, onSwitchToRegistro }) => {
           >
             ¿No tienes usuario? Regístrate aquí
           </button>
-          <p>🔐 Sistema de Supervisión - Apex America</p>
+          <p>🔐 Sistema de Supervisión - Apex Americaa</p>
         </div>
       </div>
     </div>
